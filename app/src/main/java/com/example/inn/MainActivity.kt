@@ -44,8 +44,9 @@ class MainActivity : AppCompatActivity() {
             { response ->
                 // Display the first 500 characters of the response string.
                 val data:JSONArray = response.getJSONArray("results")
+                val length:Int  = data.length()
 
-                for(i in 0..37){
+                for(i in 0 until length-1){
                     val objects = data.getJSONObject(i)
 
                     val news = CustomListView(
